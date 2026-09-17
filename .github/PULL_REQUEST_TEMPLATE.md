@@ -1,41 +1,29 @@
-## Related Issue
+## Task ID / Link
 
-Closes #<issue-number>
+<!-- Single task / issue: link the GitHub Issue and use Closes/Fixes when complete. Combined/batch/epic: link the parent ClickUp task. Use Advances #123 for partial Issue work. -->
 
-<!-- Use "Advances #123" if this PR only completes part of the Issue. -->
+- GitHub Issue / ClickUp Task:
 
-## Summary
+## Summary of Changes
 
-<!-- Keep this short. What changed? -->
+<!-- Concise bullets outlining what was built, updated, or fixed. Include the specific component, API, or logic modifications. -->
 
 - 
 - 
 
-## Testing
+## Why It Was Needed
 
-<!-- Record only what you actually tested. -->
+<!-- Brief context on the issue/requirement and the business or technical motivation. -->
 
-- [ ] Tested locally
-- [ ] Relevant automated checks pass
+- 
 
-Details:
+## Testing Steps
 
-<!-- Add quick verification steps/results if useful. -->
+<!-- Step-by-step instructions to verify the change. Include expected output and important edge cases. -->
 
-## Screenshots / Evidence
+1. 
+2. 
 
-<!-- Required only when useful, especially for UI changes. Otherwise write N/A. -->
+Expected result / edge cases:
 
-N/A
-
-## Notes / Dependencies
-
-<!-- Anything reviewers need to know: related PRs, rollout dependency, limitation, etc. Otherwise N/A. -->
-
-N/A
-
-## Checklist
-
-- [ ] The linked Issue is up to date
-- [ ] No unrelated changes are included
-- [ ] Important implementation/review discussion is recorded in GitHub
+- 
