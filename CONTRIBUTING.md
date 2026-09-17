@@ -29,11 +29,14 @@ Use Conventional Commit-style titles:
 Examples:
 
 - `feat(properties): add flat guide configuration`
+- `bug(pgforms): resolve deposit validation error`
 - `fix(leads): correct migrated lead endpoint usage`
 - `refactor(chat): simplify socket connection lifecycle`
 - `docs(setup): document local environment requirements`
 
-Preferred types: `feat`, `fix`, `hotfix`, `refactor`, `chore`, `docs`, `ui`, `test`, `perf`, `ci`, `build`.
+Supported organization types: `feat`, `bug`, `fix`, `hotfix`, `refactor`, `chore`, `ui`, `docs`.
+
+Repository-specific standards may add additional types when needed.
 
 ## Branches
 
@@ -44,10 +47,13 @@ Major initiatives may use a feature branch such as:
 Task branches should be cut from the appropriate active feature/release branch and use:
 
 - `feat/<issue-number>-<short-slug>`
+- `bug/<issue-number>-<short-slug>`
 - `fix/<issue-number>-<short-slug>`
 - `hotfix/<issue-number>-<short-slug>`
 - `refactor/<issue-number>-<short-slug>`
 - `chore/<issue-number>-<short-slug>`
+- `ui/<issue-number>-<short-slug>`
+- `docs/<issue-number>-<short-slug>`
 
 Examples:
 
