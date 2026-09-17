@@ -1,60 +1,21 @@
 name: Feature / Requirement
-description: Define a new capability, product requirement, or functional improvement.
+description: Request a new feature, change, or improvement.
 title: "feat(<scope>): "
 body:
-  - type: markdown
-    attributes:
-      value: |
-        ## Source of truth
-        This GitHub Issue owns the requirement, technical scope, acceptance criteria, dependencies, and engineering discussion.
-
-        ClickUp is used only for task ownership, priority, due date, estimation, and time tracking. Link the ClickUp task below; do not duplicate this Issue's technical discussion into ClickUp.
-
-  - type: dropdown
-    id: platform
-    attributes:
-      label: Primary Platform / Surface
-      options:
-        - Customer
-        - Business
-        - Admin
-        - Backend / API
-        - Database
-        - Mobile
-        - StayBot / AI
-        - Infrastructure / DevOps
-        - Cross-repository
-        - Other
-    validations:
-      required: true
-
   - type: textarea
     id: summary
     attributes:
       label: Summary
-      description: Briefly explain what is being built or changed.
-      placeholder: Describe the requirement in 1–3 concise paragraphs.
+      description: What needs to be built or changed?
+      placeholder: Keep it concise.
     validations:
       required: true
 
   - type: textarea
     id: context
     attributes:
-      label: Context & Motivation
-      description: Explain the user, business, operational, or technical reason this is needed.
-      placeholder: What problem or opportunity does this address, and why now?
-    validations:
-      required: true
-
-  - type: textarea
-    id: requirements
-    attributes:
-      label: Functional / Technical Requirements
-      description: Break the requirement down by flow, entity, rule, or system behavior.
-      placeholder: |
-        - Flow / Entity A: ...
-        - Flow / Entity B: ...
-        - Edge cases / state rules: ...
+      label: Why is this needed?
+      description: Give the minimum context needed to understand the request.
     validations:
       required: true
 
@@ -62,56 +23,23 @@ body:
     id: acceptance
     attributes:
       label: Acceptance Criteria
-      description: Define observable conditions required before this Issue can be closed.
-      value: |
-        - [ ] Primary requirement / user action is verified.
-        - [ ] Reload / re-hydration / persisted-state behavior is correct where applicable.
-        - [ ] Error states and validation behavior are correct.
-        - [ ] Relevant edge cases are verified.
-    validations:
-      required: true
-
-  - type: textarea
-    id: dependencies
-    attributes:
-      label: Cross-Repository / System Dependencies
-      description: Link Issues, APIs, database changes, services, or release dependencies. Use N/A if none.
       placeholder: |
-        Requires:
-        - Stayinbangalore/STAYIN_BE#123
-
-        Consumers:
-        - Stayinbangalore/CUSTOMER_STAYIN_FE#456
-
-  - type: textarea
-    id: qa
-    attributes:
-      label: QA / Verification Requirements
-      description: Define accounts, data, environments, devices, scenarios, or configurations needed to verify this requirement.
-      placeholder: List the important end-to-end scenarios QA or reviewers must verify.
+        - [ ] ...
+        - [ ] ...
     validations:
       required: true
 
-  - type: input
-    id: design
+  - type: textarea
+    id: references
     attributes:
-      label: Design / Specification Reference
-      description: Optional Figma, document, API spec, or other reference.
-      placeholder: https://...
+      label: References
+      description: Optional links to designs, related Issues, PRs, screenshots, or specs.
 
   - type: input
     id: clickup
     attributes:
-      label: ClickUp Tracking Task
-      description: Required for ownership, priority, due date, and time tracking only.
+      label: ClickUp Task
+      description: Used for task ownership, priority, due date, estimate, and time tracking.
       placeholder: https://app.clickup.com/t/...
     validations:
       required: true
-
-  - type: checkboxes
-    id: acknowledgement
-    attributes:
-      label: Author Confirmation
-      options:
-        - label: I have put the technical requirement and acceptance criteria in this GitHub Issue rather than relying on ClickUp comments or private messages.
-          required: true
