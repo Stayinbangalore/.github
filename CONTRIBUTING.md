@@ -1,42 +1,20 @@
 # Stayin Engineering Workflow
 
-This is the default workflow for repositories in the `Stayinbangalore` organization.
+All repositories in the `Stayinbangalore` organization follow the approved **Workflow, PR & GitHub Issue Standards**.
 
-## Where work lives
+Read the full standard here: [`docs/ENGINEERING_WORKFLOW.md`](docs/ENGINEERING_WORKFLOW.md).
 
-- **ClickUp** — task ownership, priority, due date, estimate, and time tracking only.
-- **GitHub Issue** — requirement, discussion, decisions, acceptance criteria, and QA findings.
-- **GitHub PR** — implementation, review, testing, and evidence.
+The required traceability flow is:
 
-Technical discussion should not live only in ClickUp, Teams, calls, or DMs. Record important decisions in the relevant GitHub Issue or PR.
+`ClickUp Task -> GitHub Issue -> Sub-Branch -> Pull Request`
 
-## Standard flow
+Key rules:
 
-`ClickUp Task -> GitHub Issue -> Branch -> Pull Request -> Merge`
+- GitHub Issues are the source of truth for technical scope, contracts, dependencies, and acceptance criteria.
+- PR titles use `type(scope): concise description #Id`.
+- Single-issue PRs use the GitHub Issue ID; combined/batch/epic PRs use the parent ClickUp Task ID.
+- Main feature branches use `<feature-name>`; sub-branches use `<type>/<task-id>` or `<type>/<task-name>`.
+- PR descriptions use the required four-section template: Task ID / Link, Summary of Changes, Why It Was Needed, Testing Steps.
+- Use `Closes #...` / `Fixes #...` for complete work and `Advances #...` for partial work.
 
-The ClickUp task links to the GitHub Issue. The PR links to the Issue.
-
-Use:
-
-- `Closes #123` when the PR completes the Issue.
-- `Advances #123` when the PR is only partial work.
-
-## Naming
-
-Issue / PR title:
-
-`type(scope): concise description #<issue-number>`
-
-The Issue title does not need the trailing Issue number.
-
-Common types:
-
-`feat`, `bug`, `fix`, `hotfix`, `refactor`, `chore`, `ui`, `docs`
-
-Branch examples:
-
-- `feat/368-lead-filtering`
-- `fix/412-pg-lead-endpoints`
-- `hotfix/501-session-loop`
-
-Repository-specific templates may add extra checks where needed.
+Repository-specific contribution files may add implementation guidance, but must preserve these organization rules.
