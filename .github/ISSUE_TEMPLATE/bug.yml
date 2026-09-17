@@ -1,50 +1,23 @@
 name: Bug / Regression
-description: Report broken behavior, regressions, incorrect contracts, or production defects.
+description: Report broken or unexpected behaviour.
 title: "bug(<scope>): "
 body:
-  - type: markdown
-    attributes:
-      value: |
-        ## Source of truth
-        Use this Issue for reproduction details, technical discussion, root-cause findings, acceptance criteria, and requirement-level QA updates.
-
-        ClickUp is only for task ownership, priority, due date, estimation, and time tracking.
-
-  - type: dropdown
-    id: platform
-    attributes:
-      label: Primary Platform / Surface
-      options:
-        - Customer
-        - Business
-        - Admin
-        - Backend / API
-        - Database
-        - Mobile
-        - StayBot / AI
-        - Infrastructure / DevOps
-        - Cross-repository
-        - Other
-    validations:
-      required: true
-
   - type: textarea
     id: problem
     attributes:
-      label: Problem Statement
-      description: Clearly explain what is broken and the affected flow/code path if known.
-      placeholder: Describe the failure and its user/system impact.
+      label: Problem
+      description: What is broken?
     validations:
       required: true
 
   - type: textarea
     id: reproduction
     attributes:
-      label: Reproduction Steps
+      label: Steps to Reproduce
       placeholder: |
-        1. Go to ...
-        2. Perform ...
-        3. Observe ...
+        1. ...
+        2. ...
+        3. ...
     validations:
       required: true
 
@@ -52,7 +25,6 @@ body:
     id: expected
     attributes:
       label: Expected Behaviour
-      placeholder: What should happen?
     validations:
       required: true
 
@@ -60,73 +32,30 @@ body:
     id: actual
     attributes:
       label: Actual Behaviour
-      placeholder: What happens instead?
-    validations:
-      required: true
-
-  - type: textarea
-    id: environment
-    attributes:
-      label: Environment / Conditions
-      description: Include environment, account/role, browser/device, API version, data state, or other relevant conditions.
-      placeholder: prod / dev / browser / device / account role / data setup
     validations:
       required: true
 
   - type: textarea
     id: evidence
     attributes:
-      label: Evidence
-      description: Add screenshots, video, logs, request/response samples, stack traces, or monitoring links. Remove secrets and personal data.
-
-  - type: textarea
-    id: rootcause
-    attributes:
-      label: Suspected Root Cause / Conflict
-      description: Optional. Add findings as investigation progresses; do not guess when unknown.
-      placeholder: Affected file/service/contract and why the current behavior fails.
-
-  - type: textarea
-    id: scope
-    attributes:
-      label: Technical Scope / Changes Required
-      description: Record confirmed remediation scope once understood.
-      placeholder: |
-        - Immediate fix: ...
-        - Contract/model changes: ...
-        - UI/error handling: ...
-
-  - type: textarea
-    id: dependencies
-    attributes:
-      label: Cross-Repository / System Dependencies
-      placeholder: Link related backend/frontend/database Issues or PRs. Use N/A if none.
+      label: Evidence / Notes
+      description: Optional screenshots, logs, videos, links, or other useful context. Do not include secrets or personal data.
 
   - type: textarea
     id: acceptance
     attributes:
-      label: Acceptance Criteria
-      value: |
-        - [ ] The reported failure is no longer reproducible.
-        - [ ] Correct expected behavior is verified end to end.
-        - [ ] Relevant error/edge states are handled correctly.
-        - [ ] No known regression is introduced in the affected flow.
+      label: Done When
+      placeholder: |
+        - [ ] Bug is no longer reproducible
+        - [ ] Expected behaviour is verified
     validations:
       required: true
 
   - type: input
     id: clickup
     attributes:
-      label: ClickUp Tracking Task
-      description: Required for ownership, priority, due date, and time tracking only.
+      label: ClickUp Task
+      description: Used for task ownership, priority, due date, estimate, and time tracking.
       placeholder: https://app.clickup.com/t/...
     validations:
       required: true
-
-  - type: checkboxes
-    id: acknowledgement
-    attributes:
-      label: Author Confirmation
-      options:
-        - label: I have included enough GitHub context to reproduce and discuss this bug without relying on ClickUp comments or private messages.
-          required: true
