@@ -1,21 +1,27 @@
-name: Feature / Requirement
-description: Request a new feature, change, or improvement.
-title: "feat(<scope>): "
+name: Feature / Requirement Issue
+description: Define a new capability, requirement, or functional improvement.
 body:
+  - type: markdown
+    attributes:
+      value: |
+        Issue title must follow: `type(scope): concise description in imperative mood`
+
   - type: textarea
     id: summary
     attributes:
       label: Summary
-      description: What needs to be built or changed?
-      placeholder: Keep it concise.
+      description: Brief 1-2 sentence overview explaining what is being built or changed.
     validations:
       required: true
 
   - type: textarea
-    id: context
+    id: context_requirements
     attributes:
-      label: Why is this needed?
-      description: Give the minimum context needed to understand the request.
+      label: Context & Requirements
+      description: Break functional rules down by entity or flow.
+      placeholder: |
+        - [Entity / Flow A]: Specific behavior, access rules, or UI limits.
+        - [Entity / Flow B]: Edge case handling and state requirements.
     validations:
       required: true
 
@@ -23,23 +29,28 @@ body:
     id: acceptance
     attributes:
       label: Acceptance Criteria
-      placeholder: |
-        - [ ] ...
-        - [ ] ...
+      value: |
+        - [ ] Direct requirement / user action verified.
+        - [ ] Reload / re-hydration edge case works without stale states.
+        - [ ] Error states and validation messages display correctly.
     validations:
       required: true
 
   - type: textarea
-    id: references
+    id: tracking
     attributes:
-      label: References
-      description: Optional links to designs, related Issues, PRs, screenshots, or specs.
+      label: Tracking & References
+      placeholder: |
+        - ClickUp Task(s):
+        - Design / Specs: [Figma Link / Notion Doc]
+        - Related PRs: [Links to related active work]
+    validations:
+      required: true
 
-  - type: input
-    id: clickup
+  - type: textarea
+    id: qa
     attributes:
-      label: ClickUp Task
-      description: Used for task ownership, priority, due date, estimate, and time tracking.
-      placeholder: https://app.clickup.com/t/...
+      label: QA Verification
+      description: Specific steps, accounts, or configurations necessary for QA validation.
     validations:
       required: true

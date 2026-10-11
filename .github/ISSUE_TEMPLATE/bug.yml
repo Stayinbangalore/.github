@@ -1,61 +1,52 @@
-name: Bug / Regression
-description: Report broken or unexpected behaviour.
-title: "bug(<scope>): "
+name: Bug & Migration Fix Issue
+description: Report a bug, regression, broken contract, or migration-related fix.
 body:
+  - type: markdown
+    attributes:
+      value: |
+        Issue title must follow: `type(scope): concise description in imperative mood`
+
   - type: textarea
     id: problem
     attributes:
-      label: Problem
-      description: What is broken?
-    validations:
-      required: true
-
-  - type: textarea
-    id: reproduction
-    attributes:
-      label: Steps to Reproduce
+      label: Problem Statement
+      description: Clearly explain the error or broken contract and mention the affected code path.
       placeholder: |
-        1. ...
-        2. ...
-        3. ...
+        - Affected File / Flow: src/features/...
+        - Root Cause / Conflict: Why the current behavior fails or violates contracts.
     validations:
       required: true
 
   - type: textarea
-    id: expected
+    id: technical_scope
     attributes:
-      label: Expected Behaviour
+      label: Technical Scope & Changes Required
+      placeholder: |
+        - Immediate Fix: Specific adjustments to routes, validation, or component logic.
+        - Contract / Model Updates: Schema fields, DTO updates, or typing changes.
+        - UI & Error Handling: User-facing states, fallbacks, or messaging updates.
     validations:
       required: true
 
   - type: textarea
-    id: actual
+    id: dependencies
     attributes:
-      label: Actual Behaviour
+      label: Cross-Repo / System Dependencies
+      placeholder: |
+        - Backend PR / Issue: e.g. STAYIN_BE#769
+        - API Spec / Docs: [Swagger / Postman Collection Link]
+        - Parent ClickUp:
     validations:
       required: true
-
-  - type: textarea
-    id: evidence
-    attributes:
-      label: Evidence / Notes
-      description: Optional screenshots, logs, videos, links, or other useful context. Do not include secrets or personal data.
 
   - type: textarea
     id: acceptance
     attributes:
-      label: Done When
-      placeholder: |
-        - [ ] Bug is no longer reproducible
-        - [ ] Expected behaviour is verified
-    validations:
-      required: true
-
-  - type: input
-    id: clickup
-    attributes:
-      label: ClickUp Task
-      description: Used for task ownership, priority, due date, estimate, and time tracking.
-      placeholder: https://app.clickup.com/t/...
+      label: Acceptance Criteria
+      value: |
+        - [ ] Incorrect route/state calls eliminated completely.
+        - [ ] Legacy and migrated fields co-exist without breaking rendering.
+        - [ ] Correct user-facing error displayed for 4xx/5xx responses.
+        - [ ] End-to-end create/edit/delete flows tested and verified.
     validations:
       required: true
